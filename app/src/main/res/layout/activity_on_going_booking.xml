@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnGoingBooking.OnGoingBooking">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_header"
+        android:elevation="5dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On Going Boarding"
+            android:textColor="@color/white"
+            android:fontFamily="@font/cairo_semibold"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/header"
+        android:background="@drawable/boxwhite1"
+        android:elevation="5dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admission number"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/admission_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-------"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Up Zone"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/pickup_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-------"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type Of Cycle booked"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/type_of_cycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-------"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Decided Pick Up time"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/pickup_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-------"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expected Amount"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/expected_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-------"
+                android:fontFamily="@font/cairo_semibold"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/details"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/boxwhite1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="Status"
+            android:fontFamily="@font/cairo_semibold"
+            android:textSize="30sp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/status_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ride not started yet"
+                android:textSize="25sp"
+                android:fontFamily="@font/cairo_semibold"
+                android:textColor="@color/black"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ride_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"/>
+
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:onClick="callPaymentactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boxblue"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:id="@+id/pay_btn"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAY >>>>"
+            android:textSize="20sp"
+            android:textColor="@color/blue"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

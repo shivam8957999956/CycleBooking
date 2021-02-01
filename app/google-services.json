@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "444293147505",
+    "firebase_url": "https://cyclebooking-64795.firebaseio.com",
+    "project_id": "cyclebooking-64795",
+    "storage_bucket": "cyclebooking-64795.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444293147505:android:e24227e62bbc06111664d0",
+        "android_client_info": {
+          "package_name": "com.example.cyclebooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444293147505-rqr8d1qii58cep0p5oebkgukaf1vprsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt1UFJ9t7T3OK_wa5qImd7TkytjxY3al4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444293147505-rqr8d1qii58cep0p5oebkgukaf1vprsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
