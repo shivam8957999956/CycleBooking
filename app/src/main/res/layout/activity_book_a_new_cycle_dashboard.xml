@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/cairo_semibold"
-            android:text="Book A new Cycle"
+            android:text="Schedule Booking"
 
             android:textColor="@color/white"
             android:textSize="30sp" />
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:fontFamily="@font/cairo_semibold"
         android:text="PickUp Zones:"
         android:textSize="20sp"
@@ -38,7 +38,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="0dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
@@ -51,25 +51,14 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/boxshapelightwhite"
             android:elevation="5dp">
-
-            <TextView
-                android:id="@+id/zone_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/cairo_semibold"
-                android:text="1"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/zone_one"
+
                 android:fontFamily="@font/cairo_semibold"
-                android:text="NLHC"
+                android:text="Zone 1"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -133,37 +122,25 @@
 
 
         </RelativeLayout>
-
-        <RelativeLayout
+ <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/boxshapelightwhite"
             android:elevation="5dp">
-
-            <TextView
-                android:id="@+id/zone_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/cairo_semibold"
-                android:text="2"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/zone_two"
+
                 android:fontFamily="@font/cairo_semibold"
-                android:text="Acedemic\nComplex"
+                android:text="Zone 2"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -183,7 +160,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="Geared Cycle:"
-
                         android:textColor="@color/red" />
 
                     <TextView
@@ -193,7 +169,6 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="----"
-
                         android:textColor="@color/green" />
 
 
@@ -209,7 +184,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="Normal Cycle:"
-
                         android:textColor="@color/red" />
 
                     <TextView
@@ -228,37 +202,25 @@
 
 
         </RelativeLayout>
-
-        <RelativeLayout
+ <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/boxshapelightwhite"
             android:elevation="5dp">
-
-            <TextView
-                android:id="@+id/zone_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="@font/cairo_semibold"
-                android:text="3"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/zone_three"
+
                 android:fontFamily="@font/cairo_semibold"
-                android:text="Central\nLibrary"
+                android:text="Zone 3"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -278,7 +240,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="Geared Cycle:"
-
                         android:textColor="@color/red" />
 
                     <TextView
@@ -288,7 +249,6 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="----"
-
                         android:textColor="@color/green" />
 
 
@@ -304,7 +264,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="Normal Cycle:"
-
                         android:textColor="@color/red" />
 
                     <TextView
@@ -314,7 +273,6 @@
                         android:layout_marginLeft="10dp"
                         android:fontFamily="@font/cairo_semibold"
                         android:text="----"
-
                         android:textColor="@color/green" />
 
 
@@ -324,6 +282,8 @@
 
 
         </RelativeLayout>
+
+
     </LinearLayout>
 
     <LinearLayout

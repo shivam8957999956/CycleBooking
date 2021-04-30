@@ -1,24 +1,30 @@
 package com.example.cyclebooking.UserLogin;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.cyclebooking.R;
 import com.example.cyclebooking.UserLogin.UserHelperClass.SignInDetail;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
 public class SignInActivity extends AppCompatActivity {
     TextInputLayout admissionNumber,phoneNo,password,comfirmPassword,fullname;
     CountryCodePicker countryCodePicker;
     ProgressBar progressBar;
-
+    int F=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,21 +48,9 @@ public class SignInActivity extends AppCompatActivity {
         }
         progressBar.setVisibility(View.VISIBLE);
 
-        String admissionnumber=admissionNumber.getEditText().getText().toString().trim();
-        String phoneno=phoneNo.getEditText().getText().toString().trim();
-        String passWord=password.getEditText().getText().toString().trim();
-        String confirmpassword=comfirmPassword.getEditText().getText().toString().trim();
-        String fullName=fullname.getEditText().getText().toString().trim();
-        String _phoneNo="+"+ countryCodePicker.getFullNumber()+phoneno;
-        FirebaseDatabase rootnode=FirebaseDatabase.getInstance();
-        DatabaseReference ref=rootnode.getReference("Users");
-        SignInDetail signInDetail=new SignInDetail(fullName,admissionnumber,_phoneNo,passWord);
-        ref.child(admissionnumber).setValue(signInDetail);
-        progressBar.setVisibility(View.GONE);
+        checkExist();
+     //   Toast.makeText(this, String.valueOf(F), Toast.LENGTH_SHORT).show();
 
-        Intent intent=new Intent(getApplicationContext(),Login_activity.class);
-        startActivity(intent);
-        finish();
 
 
 
@@ -127,10 +121,65 @@ public class SignInActivity extends AppCompatActivity {
         } else {
             admissionNumber.setError(null);
             admissionNumber.setErrorEnabled(false);
+
+
             return true;
+
         }
 
 
+
+    }
+
+    private void checkExist() {
+        String admission = admissionNumber.getEditText().getText().toString().trim();
+        //Toast.makeText(this, admission, Toast.LENGTH_SHORT).show();
+        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("admission").equalTo(admission);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+
+                    Toast.makeText(SignInActivity.this, "User already exist", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    admissionNumber.setError("Already registered");
+                    phoneNo.getEditText().setText("");
+                    comfirmPassword.getEditText().setText("");
+                    password.getEditText().setText("");
+                    fullname.getEditText().setText("");
+
+                } else {
+
+                    String admissionnumber=admissionNumber.getEditText().getText().toString().trim();
+                    String phoneno=phoneNo.getEditText().getText().toString().trim();
+                    String passWord=password.getEditText().getText().toString().trim();
+                    String confirmpassword=comfirmPassword.getEditText().getText().toString().trim();
+                    String fullName=fullname.getEditText().getText().toString().trim();
+                    String _phoneNo="+"+ countryCodePicker.getFullNumber()+phoneno;
+                    FirebaseDatabase rootnode=FirebaseDatabase.getInstance();
+                    DatabaseReference ref=rootnode.getReference("Users");
+                    SignInDetail signInDetail=new SignInDetail(fullName,admissionnumber,_phoneNo,passWord);
+                    ref.child(admissionnumber).setValue(signInDetail);
+                    progressBar.setVisibility(View.GONE);
+
+                    Intent intent=new Intent(getApplicationContext(),Login_activity.class);
+                    startActivity(intent);
+                    finish();
+
+
+
+
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -223,20 +225,32 @@ public class BookANewCycleDashboard extends AppCompatActivity {
     }
 
     private void finalstep() {
-        setuppin(phone);
 
+       setuppin(phone);
 
+//        int randomPIN = (int)(Math.random()*9000)+1000;
+//        String PINString = String.valueOf(randomPIN);
+//     //   Toast.makeText(this, PINString, Toast.LENGTH_SHORT).show();
+//        storeData(PINString);
+//        String _rate = getResult.getText().toString().trim();
+//        Intent intent = new Intent(getApplicationContext(), completeBooking.class);
+//        intent.putExtra("pin", PINString);
+//        intent.putExtra("rate", _rate);
+//        startActivity(intent);
+//        finish();
     }
 
     private void setuppin(String phone) {
 
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                phone,        // Phone number to verify
-                60,                 // Timeout duration
-                TimeUnit.SECONDS,   // Unit of timeout
-                TaskExecutors.MAIN_THREAD,               // Activity (for callback binding)
-                mCallbacks);        // OnVerificationStateChangedCallbacks
-
+        PhoneAuthProvider.verifyPhoneNumber(
+                PhoneAuthOptions
+                        .newBuilder(FirebaseAuth.getInstance())
+                        .setActivity(this)
+                        .setPhoneNumber(phone)
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setCallbacks(mCallbacks)
+                        .build());        // OnVerificationStateChangedCallbacks
+        Toast.makeText(this, "test name", Toast.LENGTH_SHORT).show();
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
@@ -245,6 +259,7 @@ public class BookANewCycleDashboard extends AppCompatActivity {
                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                     super.onCodeSent(s, forceResendingToken);
                     codeBySystem = s;
+                    Toast.makeText(BookANewCycleDashboard.this, "codesent", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -279,7 +294,7 @@ public class BookANewCycleDashboard extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            storeData();
+                           // storeData();
                             Toast.makeText(BookANewCycleDashboard.this, "Pickup Pin generated", Toast.LENGTH_SHORT).show();
                             String _pinFromUser = pinFromUser.getText().toString().trim();
                             String _rate = getResult.getText().toString().trim();
@@ -298,12 +313,12 @@ public class BookANewCycleDashboard extends AppCompatActivity {
                 });
     }
 
-    private void storeData() {
+    private void storeData(String pin) {
         final String admission = admissionNumber.getEditText().getText().toString().trim();
         final String _zone = zone.getEditText().getText().toString().trim();
         final String _numberOfHours = numberOfHours.getEditText().getText().toString().trim();
         final String _pickUpTime = pickUpTime.getEditText().getText().toString().trim();
-        String pin = pinFromUser.getText().toString().trim();
+
         FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
         DatabaseReference ref = rootnode.getReference("Users");
         DatabaseReference ref2 = rootnode.getReference("Users");
@@ -327,21 +342,25 @@ public class BookANewCycleDashboard extends AppCompatActivity {
 
     public void changegeared(View view) {
 
-        geared.setBackgroundColor(getColor(R.color.black));
-        geared.setTextColor(getColor(R.color.white));
-        type = "geared";
-        normal.setBackgroundColor(getColor(R.color.white));
-        normal.setTextColor(getColor(R.color.black));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            geared.setBackgroundColor(getColor(R.color.black));
+            geared.setTextColor(getColor(R.color.white));
+            type = "geared";
+            normal.setBackgroundColor(getColor(R.color.white));
+            normal.setTextColor(getColor(R.color.black));
+        }
     }
 
     public void changenormal(View view) {
 
-        normal.setBackgroundColor(getColor(R.color.black));
-        normal.setTextColor(getColor(R.color.white));
-        type = "normal";
-        geared.setBackgroundColor(getColor(R.color.white));
-        geared.setTextColor(getColor(R.color.black));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            normal.setBackgroundColor(getColor(R.color.black));
 
+            normal.setTextColor(getColor(R.color.white));
+            type = "normal";
+            geared.setBackgroundColor(getColor(R.color.white));
+            geared.setTextColor(getColor(R.color.black));
+        }
 
     }
 

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cyclebooking">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PreviousBooking.PreviousBooking"></activity>
+        <activity android:name=".BookANewCycle.ScheduleBooking"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".InstantBooking.ScannerActivity" />
+        <activity android:name=".InstantBooking.InstantBooking" />
+        <activity android:name=".PreviousBooking.PreviousBooking" />
         <activity android:name=".Payment.Payment" />
         <activity android:name=".OnGoingBooking.OnGoingBooking" />
         <activity android:name=".BookANewCycle.completeBooking" />

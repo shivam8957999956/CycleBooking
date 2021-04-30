@@ -18,6 +18,9 @@ import android.widget.Toast;
 
 import com.example.cyclebooking.AllDetails.AllDetails;
 import com.example.cyclebooking.BookANewCycle.BookANewCycleDashboard;
+import com.example.cyclebooking.BookANewCycle.ScheduleBooking;
+import com.example.cyclebooking.InstantBooking.InstantBooking;
+import com.example.cyclebooking.MainActivity2;
 import com.example.cyclebooking.OnGoingBooking.OnGoingBooking;
 import com.example.cyclebooking.PreviousBooking.PreviousBooking;
 import com.example.cyclebooking.R;
@@ -96,7 +99,7 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
 
 
     public void callbooknewcycle(View view) {
-        Intent intent = new Intent(getApplicationContext(), BookANewCycleDashboard.class);
+        Intent intent = new Intent(getApplicationContext(), ScheduleBooking.class);
         startActivity(intent);
 
     }
@@ -148,13 +151,20 @@ public class MainDashboard extends AppCompatActivity implements NavigationView.O
                 }
                 break;
             case R.id.menu_logout:
-                SharedPreferences sharedPref=getSharedPreferences("userlogindata", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor=sharedPref.edit();
-                editor.putString("username","");
-                editor.apply();
-                Toast.makeText(this, "You Are Successfully Logged Out \n Login to continue our service again", Toast.LENGTH_LONG).show();
+
+                SharedPreferences sharedPref = getSharedPreferences("userlogindata", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                {
+                    editor.putString("username", "");
+                    editor.apply();
+                    Toast.makeText(this, "You Are Successfully Logged Out \n Login to continue our service again", Toast.LENGTH_LONG).show();
+                }
         }
 
         return true;
+    }
+
+    public void comfirm(View v) {
+        startActivity(new Intent(getApplicationContext(), MainActivity2.class));
     }
 }

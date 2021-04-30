@@ -1,34 +1,71 @@
 {
   "project_info": {
-    "project_number": "444293147505",
-    "firebase_url": "https://cyclebooking-64795.firebaseio.com",
-    "project_id": "cyclebooking-64795",
-    "storage_bucket": "cyclebooking-64795.appspot.com"
+    "project_number": "18997793266",
+    "firebase_url": "https://fir-authphonenumber-35fc3-default-rtdb.firebaseio.com",
+    "project_id": "fir-authphonenumber-35fc3",
+    "storage_bucket": "fir-authphonenumber-35fc3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:444293147505:android:e24227e62bbc06111664d0",
+        "mobilesdk_app_id": "1:18997793266:android:0565836655727382b1db6b",
         "android_client_info": {
           "package_name": "com.example.cyclebooking"
         }
       },
       "oauth_client": [
         {
-          "client_id": "444293147505-rqr8d1qii58cep0p5oebkgukaf1vprsl.apps.googleusercontent.com",
+          "client_id": "18997793266-jodds029bo4lk2ge258fqob48o6e6hng.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDt1UFJ9t7T3OK_wa5qImd7TkytjxY3al4"
+          "current_key": "AIzaSyAN2BG5-pD2apmERSf12Wt2QnVcp2cywKE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "444293147505-rqr8d1qii58cep0p5oebkgukaf1vprsl.apps.googleusercontent.com",
+              "client_id": "18997793266-jodds029bo4lk2ge258fqob48o6e6hng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18997793266:android:258fce14fb972bd6b1db6b",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauthphonenumber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18997793266-isvuql4p6l1i0d115n0c114fade93982.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebaseauthphonenumber",
+            "certificate_hash": "4f288b4e7b95f716c458c4ecf5cc34250902a670"
+          }
+        },
+        {
+          "client_id": "18997793266-jodds029bo4lk2ge258fqob48o6e6hng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN2BG5-pD2apmERSf12Wt2QnVcp2cywKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18997793266-jodds029bo4lk2ge258fqob48o6e6hng.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

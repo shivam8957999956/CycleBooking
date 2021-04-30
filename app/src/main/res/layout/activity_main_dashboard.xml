@@ -16,7 +16,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_header"
         app:itemTextColor="@color/black"
-        app:menu="@menu/login_menu"/>
+        app:menu="@menu/login_menu" />
 
 
     <LinearLayout
@@ -107,58 +107,60 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp">
         <LinearLayout
-            android:id="@+id/on_going_booking"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/boxshapeyellow"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:onClick="callOngoingBooking"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
+            android:layout_height="211dp"
+            android:layout_marginTop="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ON GOING BOOKING "
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:fontFamily="@font/cairo_semibold"
-                android:layout_gravity="center_vertical"/>
+            <LinearLayout
+                android:id="@+id/on_going_booking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/boxshapeyellow"
+                android:elevation="5dp"
+                android:onClick="callOngoingBooking"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:gravity="center"
+                    android:text="ON GOING BOOKING "
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/all_zones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/boxshapered"
+                android:elevation="5dp"
+                android:onClick="callAllDetailsScreen"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:gravity="center"
+                    android:text="DETAILS OF ALL AVAILABLE ZONES"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/all_zones"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/boxshapered"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:onClick="callAllDetailsScreen"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DETAILS OF ALL AVAILABLE ZONES"
-                android:textColor="@color/white"
-                android:textSize="23sp"
-                android:fontFamily="@font/cairo_semibold"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"/>
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -167,6 +169,8 @@
             android:padding="10dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
+            android:onClick="comfirm"
+            android:elevation="10dp"
             >
             <TextView
                 android:layout_width="wrap_content"
